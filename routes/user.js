@@ -29,10 +29,7 @@ router.post('/', (req, res) => {
     notes.push(req.body.nameItem);
     let data = JSON.stringify(notes);
     fs.writeFileSync('userlog.json', data);
-    res.render('list', {
-        ListTitle: day,
-        itemsarray: notes
-    });
+    res.redirect('/');
 })
 
 router.post('/delete/:id', (req, res) => {
@@ -42,4 +39,5 @@ router.post('/delete/:id', (req, res) => {
     fs.writeFileSync('userlog.json', data);
     res.redirect('/');
 })
-module.exports = router
+
+module.exports = router;

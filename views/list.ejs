@@ -6,8 +6,8 @@
     <% for (let i=0; i<itemsarray.length; i++) { %>
     <div class="item">
         <input type="checkbox">
-        <p><%= itemsarray[i] %><p>
-        <button class="del" data-id=<%= [i] %> type="submit" name="">-</button>
+        <p><%= itemsarray[i].note %><p>
+        <button class="del" data-id=<%= itemsarray[i].id %> type="submit" name="">-</button>
     </div>
     <% } %>
     <form class="item" action="/" method="POST">
